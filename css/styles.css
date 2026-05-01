@@ -274,3 +274,47 @@ canvas {
     opacity: 1;
     transform: translateY(0);
 }
+/*practicas*/
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.intro {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+input {
+    display: block;
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+.grafica-container {
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+}
+
+#grafica {
+    width: 100% !important;
+    height: 100% !important;
+}
