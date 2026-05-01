@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Simulaciones</title><link rel="stylesheet" href="styles.css"></head>
+<head>
+<meta charset="UTF-8">
+<title>Simulador de Circuitos</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
 <body>
-<h2>Serie</h2>
-<input id="r1s"><input id="r2s"><input id="vs">
-<button onclick="calcularSerie()">Calcular</button>
-<p id="resultadoSerie"></p>
 
-<h2>Paralelo</h2>
-<input id="r1p"><input id="r2p"><input id="vp">
-<button onclick="calcularParalelo()">Calcular</button>
-<p id="resultadoParalelo"></p>
+<header>
+    <h1>Simulador de Circuitos</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cd.html">Corriente Directa</a>
+        <a href="ca.html">Corriente Alterna</a>
+        <!-- MENÚ DESPLEGABLE -->
+        <div class="dropdown">
+            <button class="dropbtn">Prácticas ▾</button>
+            <div class="dropdown-content">
+                <a href="bnc-caiman.html">Cable BNC-Caimán</a>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<script src="script.js"></script>
-</body></html>
+<main class="container">
+
+<!-- ================= SERIE ================= -->
+<section class="intro">
+    <h2>Circuito en Serie</h2>
+
+    <div id="resistenciasSerie"></div>
+    <button onclick="agregarResistencia('serie')">+ Resistencia</button>
+
+    <input id="voltajeSerie" placeholder="Voltaje (V)">
+    <button onclick="calcularSerie()">Calcular</button>
+
+    <div class="resultado-box">
+        <p id="resultadoSerie"></p>
+    </div>
+</section>
+
+<!-- ================= PARALELO ================= -->
+<section class="intro">
+    <h2>Circuito en Paralelo</h2>
+
+    <div id="resistenciasParalelo"></div>
+    <button onclick="agregarResistencia('paralelo')">+ Resistencia</button>
+
+    <input id="voltajeParalelo" placeholder="Voltaje (V)">
+    <button onclick="calcularParalelo()">Calcular</button>
+
+    <div class="resultado-box">
+        <p id="resultadoParalelo"></p>
+    </div>
+</section>
+
+<!-- ================= GRÁFICA ================= -->
+<section class="intro">
+    <h2>Gráfica V–I</h2>
+    <div class="grafica-container">
+        <canvas id="grafica"></canvas>
+    </div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script_p.js"></script>
+
+</body>
+</html>
