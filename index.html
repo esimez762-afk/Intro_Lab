@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio | Circuitos CA y CD</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Simulador de Circuitos</h1>
+    <nav>
+        <a href="cd.html">Corriente Directa</a>
+        <a href="ca.html">Corriente Alterna</a>
+        <!-- MENÚ DESPLEGABLE -->
+        <div class="dropdown">
+            <button class="dropbtn">Prácticas ▾</button>
+            <div class="dropdown-content">
+                <a href="practicas.html">Simulaciones</a>
+                <a href="bnc-caiman.html">Cable BNC-Caimán</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    
+    <section class="intro">
+        <h2>Introducción a Circuitos Eléctricos</h2>
+
+        <p>
+            La electricidad constituye uno de los pilares fundamentales de la ingeniería moderna, 
+            y su estudio se centra en dos formas principales de flujo de carga: la 
+            <strong>Corriente Directa (CD)</strong> y la <strong>Corriente Alterna (CA)</strong>. 
+            Ambas representan maneras distintas en que los electrones se desplazan a través de un conductor, 
+            y cada una posee características, aplicaciones y comportamientos específicos.
+        </p>
+
+        <p>
+            La <strong>Corriente Directa (CD)</strong> se caracteriza por mantener un flujo constante de electrones 
+            en una sola dirección, proporcionando una entrega de energía estable. Es ampliamente utilizada 
+            en dispositivos electrónicos, baterías y sistemas de baja potencia.
+        </p>
+
+        <div class="diagramas">
+
+            <h3>Diagramas de Corriente Directa (CD)</h3>
+                <svg viewBox="0 0 500 150" class="grafica">
+                    <!-- Ejes -->
+                    <line x1="50" y1="120" x2="450" y2="120" stroke="black"/>
+                    <line x1="50" y1="20" x2="50" y2="120" stroke="black"/>
+        
+                    <!-- Línea CD -->
+                    <line x1="50" y1="70" x2="450" y2="70" stroke="blue" stroke-width="3"/>
+        
+                        <text x="200" y="140">Tiempo</text>
+                        <text x="20" y="70" transform="rotate(-90 20,70)">Voltaje</text>
+                        <text x="180" y="60" fill="blue">CD (Constante)</text>
+                </svg>
+
+        <p>
+            En contraste, la <strong>Corriente Alterna (CA)</strong> presenta una variación periódica en magnitud 
+            y dirección, generalmente en forma de onda sinusoidal. Este comportamiento la hace ideal para 
+            la transmisión de energía eléctrica a largas distancias, siendo el estándar en redes eléctricas.
+        </p>
+
+        <h3>Diagramas de Corriente Alterna (CA)</h3>
+            <svg viewBox="0 0 500 150" class="grafica">
+                <!-- Ejes -->
+                <line x1="50" y1="120" x2="450" y2="120" stroke="black"/>
+                <line x1="50" y1="20" x2="50" y2="120" stroke="black"/>
+    
+                <!-- Onda CA -->
+                <path d="M 50 70 Q 100 20, 150 70 T 250 70 T 350 70 T 450 70" 
+                    stroke="red" fill="transparent" stroke-width="3"/>
+    
+                    <text x="200" y="140">Tiempo</text>
+                    <text x="20" y="70" transform="rotate(-90 20,70)">Voltaje</text>
+                    <text x="180" y="60" fill="red">CA (Senoidal)</text>
+            </svg>
+
+        <p>
+            El análisis de estos circuitos implica el estudio de variables fundamentales como voltaje, 
+            corriente, resistencia, impedancia y potencia. Comprender ambos tipos de corriente es esencial 
+            para el diseño y optimización de sistemas eléctricos modernos.
+        </p>
+    </section>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

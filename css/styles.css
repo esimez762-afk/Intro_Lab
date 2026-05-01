@@ -1,0 +1,276 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #1f2937;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navegación */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #e5e7eb;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* TARJETAS */
+.intro {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.intro h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.intro p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* DIAGRAMAS */
+.diagramas {
+    margin-top: 40px;
+}
+
+.diagramas h3 {
+    margin: 25px 0 10px;
+    color: #111827;
+}
+
+.grafica {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 10px auto 30px;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* TEXTO RESALTADO */
+strong {
+    color: #1d4ed8;
+}
+
+/* ===================== */
+/* DROPDOWN PRÁCTICAS */
+/* ===================== */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: #e5e7eb;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.dropbtn:hover {
+    color: #60a5fa;
+}
+
+/* Menú oculto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1f2937;
+    min-width: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #374151;
+}
+
+/* Mostrar */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* VIDEO RESPONSIVO */
+.video-container {
+    width: 100%;
+    max-width: 350px; /* controla el tamaño */
+    aspect-ratio: 9 / 16; /* 🔥 CLAVE: formato vertical */
+    margin: 30px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000; /* relleno negro elegante */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* FORMULARIO */
+.form-ohm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-ohm input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÓN */
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* RESULTADO */
+.resultado-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    border-left: 5px solid #2563eb;
+}
+canvas {
+    max-width: 1000px;
+    display: block;
+    margin: 20px auto;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* SOLO CA */
+.ca-page .grafica-container {
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+.ca-page #graficaCA {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#osciloscopioCA {
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* MENÚ */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* SUBMENÚ */
+.submenu {
+    display: none;
+    position: absolute;
+    background: white;
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* TARJETAS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+    transition: 0.3s;
+}
+
+/* ANIMACIÓN */
+.animado {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animado.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
