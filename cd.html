@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Corriente Directa</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Corriente Directa (CD)</h1>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="ca.html">Corriente Alterna</a>
+
+        <!-- MENÚ DESPLEGABLE -->
+        <div class="dropdown">
+            <button class="dropbtn">Prácticas ▾</button>
+            <div class="dropdown-content">
+                <a href="practicas.html">Simulaciones</a>
+                <a href="bnc-caiman.html">Cable BNC-Caimán</a>
+            </div>
+        </div>
+
+</header>
+
+<main class="container">
+
+<!-- TEORÍA -->
+<section class="intro">
+    <h2>Teoría</h2>
+    <p>
+        La <strong>Corriente Directa (CD)</strong> es el flujo de electrones en una sola dirección.
+        Se utiliza en dispositivos electrónicos y baterías.
+    </p>
+
+    <p>
+        En un circuito de CD, el voltaje es constante y la corriente fluye de manera continua.
+        La relación entre voltaje (V), corriente (I) y resistencia (R) se describe por la Ley de Ohm:
+    </p>
+
+    <p>
+        En los circuitos eléctricos, tres variables fundamentales interactúan:
+    </p>
+
+    <ul>
+        <li><strong>Voltaje (V):</strong> Diferencia de potencial</li>
+        <li><strong>Corriente (I):</strong> Flujo de electrones</li>
+        <li><strong>Resistencia (R):</strong> Oposición al paso de corriente</li>
+    </ul>
+
+    <p style="text-align:center; font-size:20px;"><strong>V = I × R</strong></p>
+</section>
+
+<!-- CALCULADORA -->
+<section class="intro">
+    <h2>Calculadora Ley de Ohm</h2>
+
+    <div class="form-ohm">
+        <input id="voltaje" placeholder="Voltaje (V)">
+        <input id="corriente" placeholder="Corriente (A)">
+        <input id="resistencia" placeholder="Resistencia (Ω)">
+    </div>
+
+    <button onclick="calcularOhm()">Calcular</button>
+
+    <div class="resultado-box">
+        <p id="resultadoOhm"></p>
+    </div>
+</section>
+
+<!-- GRÁFICA -->
+<section class="intro">
+    <h2>Gráfica V-I</h2>
+    <canvas id="graficaVI" width="800" height="400"></canvas>
+</section>
+
+<!-- OSCILOSCOPIO -->
+<section class="intro">
+    <h2>Simulador tipo Osciloscopio</h2>
+
+    <div class="controles">
+
+        <label>Modo:</label>
+        <select id="modo">
+            <option value="cd">CD</option>
+            <option value="ca">CA</option>
+        </select>
+
+        <label>Voltaje:</label>
+        <input type="range" id="voltajeSlider" min="1" max="20" value="5">
+
+        <label>Resistencia:</label>
+        <input type="range" id="resistenciaSlider" min="1" max="100" value="10">
+
+        <label>Frecuencia:</label>
+        <input type="range" id="frecuenciaSlider" min="1" max="60" value="10">
+        <span id="freqValue">10 Hz</span>
+
+    </div>
+
+    <canvas id="osciloscopio"></canvas>
+</section>
+
+</main>
+
+<!-- LIBRERÍA -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script_cd.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cable BNC a Caimán</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Fabricación de Cable BNC a Caimán</h1>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cd.html">Corriente Directa</a>
+        <a href="ca.html">Corriente Alterna</a>
+
+        <!-- MENÚ DESPLEGABLE -->
+        <div class="dropdown">
+            <button class="dropbtn">Prácticas ▾</button>
+            <div class="dropdown-content">
+                <a href="practicas.html">Simulaciones</a>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+
+    
+    
+    <section class="intro">
+        <h2>¿Qué es un cable BNC-Caimán?</h2>
+        <p>
+            El cable BNC a caimán es un tipo de conexión utilizada en instrumentos de medición 
+            como osciloscopios, generadores de funciones y fuentes de alimentación. Este cable 
+            permite conectar señales eléctricas mediante un conector BNC y terminales tipo caimán 
+            (rojo y negro).
+        </p>
+        
+        <p>
+            Este tipo de cable es ampliamente utilizado en laboratorios y pruebas electrónicas, 
+            ya que facilita la conexión rápida a circuitos sin necesidad de soldadura permanente.
+        </p>
+    </section>
+    
+    <section class="intro">
+        <h2>Materiales necesarios</h2>
+        <ul>
+            <li>Cable coaxial (RG58 o RG59)</li>
+            <li>Conector BNC macho</li>
+            <li>2 pinzas caimán (rojo y negro)</li>
+            <li>Cautín y estaño</li>
+            <li>Pelacables</li>
+            <li>Cinta aislante o termocontráctil</li>
+        </ul>
+    </section>
+    
+    <section class="intro">
+        <h2>Estructura del cable coaxial</h2>
+        <p>
+            El cable coaxial está compuesto por:
+        </p>
+        <ul>
+            <li>Conductor central (señal)</li>
+            <li>Aislante dieléctrico</li>
+            <li>Malla o blindaje (tierra)</li>
+            <li>Cubierta exterior</li>
+        </ul>
+    </section>
+    
+    <section class="intro">
+        <h2>Procedimiento paso a paso</h2>
+        
+        <h3>1. Corte del cable</h3>
+        <p>
+            Corta el cable coaxial a la longitud deseada según la aplicación.
+        </p>
+        
+        <h3>2. Pelado del cable</h3>
+        <p>
+            Retira aproximadamente 1–2 cm del aislamiento externo para exponer la malla 
+            y el conductor central.
+        </p>
+        
+        <h3>3. Preparación de conexiones</h3>
+        <p>
+            Separa la malla del conductor central. La malla será la tierra y el conductor 
+            central la señal.
+        </p>
+        
+        <h3>4. Conexión al BNC</h3>
+        <p>
+            Conecta el conductor central al pin central del conector BNC y la malla al cuerpo 
+            del conector. Asegura bien la conexión mediante soldadura o tornillo.
+        </p>
+        
+        <h3>5. Conexión de caimanes</h3>
+        <p>
+            Conecta:
+        </p>
+        <ul>
+            <li>Cable central → Caimán rojo (señal)</li>
+            <li>Malla → Caimán negro (tierra)</li>
+        </ul>
+        
+        <h3>6. Aislamiento</h3>
+        <p>
+            Protege las conexiones con cinta aislante o tubo termocontráctil para evitar 
+            cortocircuitos.
+        </p>
+        
+        <h3>7. Prueba del cable</h3>
+        <p>
+            Verifica continuidad y funcionamiento con un multímetro o instrumento de medición.
+        </p>
+    </section>
+    
+    <!-- VIDEO -->
+    <section class="intro">
+        <h2>Video de referencia</h2>
+    
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="video/bnc-caiman.mp4" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
+        </div>
+    
+         <p style="text-align:center;">
+            Si el video no carga, 
+            <a href="https://youtu.be/CYh6mPUYT2U" target="_blank">
+                haz clic aquí para verlo en YouTube
+            </a>.
+        </p>
+    </section>
+
+<section class="intro">
+    <h2>Diagrama de conexión</h2>
+
+    <svg viewBox="0 0 600 200" class="grafica">
+        <!-- Cable -->
+        <line x1="100" y1="100" x2="300" y2="100" stroke="black" stroke-width="3"/>
+
+        <!-- BNC -->
+        <circle cx="80" cy="100" r="20" stroke="black" fill="none"/>
+        <text x="60" y="140">BNC</text>
+
+        <!-- División -->
+        <line x1="300" y1="100" x2="450" y2="50" stroke="red" stroke-width="3"/>
+        <line x1="300" y1="100" x2="450" y2="150" stroke="black" stroke-width="3"/>
+
+        <!-- Caimanes -->
+        <text x="460" y="50" fill="red">Caimán (+)</text>
+        <text x="460" y="150">Caimán (-)</text>
+
+        <!-- Etiquetas -->
+        <text x="180" y="80">Cable coaxial</text>
+    </svg>
+
+</section>
+
+<section class="intro">
+    <h2>Recomendaciones técnicas</h2>
+    <ul>
+        <li>Usar cable coaxial de 50Ω o 75Ω según el equipo</li>
+        <li>Evitar conexiones flojas para no perder señal</li>
+        <li>Verificar polaridad antes de usar</li>
+        <li>No exceder la corriente máxima (~5A)</li>
+    </ul>
+</section>
+
+<section class="intro">
+    <h2>Aplicaciones</h2>
+    <ul>
+        <li>Osciloscopios</li>
+        <li>Generadores de señal</li>
+        <li>Pruebas electrónicas</li>
+        <li>Laboratorios educativos</li>
+    </ul>
+</section>
+
+</main>
+
+</body>
+</html>
