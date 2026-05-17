@@ -1,320 +1,530 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================
+   RESET
+========================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* General */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
+/* =========================================
+   BODY
+========================================= */
+body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.7;
 }
 
-/* Header */
-header {
-    background: #1f2937;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* =========================================
+   HEADER
+========================================= */
+header{
+    background:linear-gradient(135deg,#1f2937,#111827);
+    color:#fff;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-/* Navegación */
-nav {
-    margin-top: 10px;
+header h1{
+    font-size:2.2rem;
+    margin-bottom:15px;
+    letter-spacing:1px;
 }
 
-nav a {
-    color: #e5e7eb;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
+/* =========================================
+   NAVBAR
+========================================= */
+nav{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
-nav a:hover {
-    color: #60a5fa;
+nav a,
+.dropbtn{
+    color:#e5e7eb;
+    text-decoration:none;
+    font-weight:500;
+    background:rgba(255,255,255,0.08);
+    padding:10px 18px;
+    border-radius:10px;
+    transition:0.3s;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
 }
 
-/* CONTENEDOR */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+nav a:hover,
+.dropbtn:hover{
+    background:#2563eb;
+    color:white;
+    transform:translateY(-2px);
 }
 
-/* TARJETAS */
-.intro {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* =========================================
+   DROPDOWN MEJORADO
+========================================= */
+.dropdown{
+    position:relative;
+    display:inline-block;
 }
 
-.intro h2 {
-    margin-bottom: 20px;
-    color: #111827;
+/* MENÚ DESPLEGABLE */
+.dropdown-content{
+    position:absolute;
+    top:100%;
+    left:0;
+
+    min-width:220px;
+
+    background:#fff;
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s;
+
+    z-index:1000;
+
+    overflow:hidden;
 }
 
-.intro p {
-    margin-bottom: 15px;
-    text-align: justify;
+/* LINKS DEL MENÚ */
+.dropdown-content a{
+    display:block;
+    padding:12px 15px;
+    color:#111827;
+    text-decoration:none;
+    transition:0.3s;
 }
 
-/* DIAGRAMAS */
-.diagramas {
-    margin-top: 40px;
+.dropdown-content a:hover{
+    background:#dbeafe;
 }
 
-.diagramas h3 {
-    margin: 25px 0 10px;
-    color: #111827;
+/* MOSTRAR MENÚ */
+.dropdown:hover .dropdown-content{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
 }
 
-.grafica {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 10px auto 30px;
-    background: #fafafa;
-    border-radius: 8px;
-    padding: 10px;
-    border: 1px solid #ddd;
+/* =========================================
+   CONTAINER
+========================================= */
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
 }
 
-/* TEXTO RESALTADO */
-strong {
-    color: #1d4ed8;
+/* =========================================
+   TARJETAS
+========================================= */
+.intro{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom:30px;
+    transition:0.3s;
 }
 
-/* ===================== */
-/* DROPDOWN PRÁCTICAS */
-/* ===================== */
-
-.dropdown {
-    display: inline-block;
-    position: relative;
+.intro:hover{
+    transform:translateY(-3px);
 }
 
-.dropbtn {
-    background: none;
-    border: none;
-    color: #e5e7eb;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0 15px;
-    font-weight: 500;
+/* =========================================
+   TITULOS
+========================================= */
+.intro h2{
+    margin-bottom:20px;
+    color:#111827;
+    border-left:5px solid #2563eb;
+    padding-left:12px;
+    font-size:1.8rem;
 }
 
-.dropbtn:hover {
-    color: #60a5fa;
+.intro h3{
+    margin:20px 0 10px;
+    color:#1f2937;
 }
 
-/* Menú oculto */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #1f2937;
-    min-width: 180px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 1;
+.intro p{
+    margin-bottom:15px;
+    text-align:justify;
 }
 
-/* Links */
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
+/* =========================================
+   TEXTO RESALTADO
+========================================= */
+strong{
+    color:#1d4ed8;
 }
 
-.dropdown-content a:hover {
-    background-color: #374151;
+/* =========================================
+   LISTAS
+========================================= */
+.intro ul{
+    padding:18px 20px 18px 40px;
+    margin-top:10px;
+    margin-bottom:20px;
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    border-radius:10px;
 }
 
-/* Mostrar */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-/* VIDEO RESPONSIVO */
-.video-container {
-    width: 100%;
-    max-width: 350px; /* controla el tamaño */
-    aspect-ratio: 9 / 16; /* 🔥 CLAVE: formato vertical */
-    margin: 30px auto;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000; /* relleno negro elegante */
+.intro li{
+    margin-bottom:10px;
+    line-height:1.7;
 }
 
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* =========================================
+   FORMULAS
+========================================= */
+.formula{
+    background:#111827;
+    color:#38bdf8;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    font-size:1.1rem;
+    margin:15px 0;
+    font-family:Consolas,monospace;
+    box-shadow:inset 0 0 10px rgba(56,189,248,0.2);
 }
 
-/* FORMULARIO */
-.form-ohm {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+/* =========================================
+   INPUTS
+========================================= */
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+    font-size:15px;
+    transition:0.3s;
 }
 
-.form-ohm input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 8px rgba(37,99,235,0.3);
 }
 
-/* BOTÓN */
-button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
+/* =========================================
+   FORMULARIOS
+========================================= */
+.form-ohm{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+    flex-wrap:wrap;
 }
 
-button:hover {
-    background: #1d4ed8;
+.form-ohm input{
+    flex:1;
 }
 
-/* RESULTADO */
-.resultado-box {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f1f5f9;
-    border-radius: 10px;
-    border-left: 5px solid #2563eb;
-}
-canvas {
-    max-width: 1000px;
-    display: block;
-    margin: 20px auto;
-}
-
-.controles {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* =========================================
+   BOTONES
+========================================= */
+button{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:15px;
 }
 
-/* SOLO CA */
-.ca-page .grafica-container {
-    max-width: 600px;
-    height: 300px;
-    margin: 20px auto;
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(37,99,235,0.3);
 }
 
-.ca-page #graficaCA {
-    width: 100% !important;
-    height: 100% !important;
+/* =========================================
+   RESULTADOS
+========================================= */
+.resultado-box{
+    margin-top:15px;
+    padding:15px;
+    background:#eff6ff;
+    border-radius:12px;
+    border-left:5px solid #2563eb;
+    font-weight:bold;
 }
 
-#osciloscopioCA {
-    max-width: 800px;
-    margin: 20px auto;
-    display: block;
+/* =========================================
+   DIAGRAMAS
+========================================= */
+.diagramas{
+    margin-top:40px;
 }
 
-/* MENÚ */
-.menu {
-    display: flex;
-    gap: 20px;
-    list-style: none;
+.diagramas h3{
+    margin:25px 0 10px;
 }
 
-.menu li {
-    position: relative;
+.grafica{
+    width:100%;
+    max-width:600px;
+    display:block;
+    margin:10px auto 30px;
+    background:#fafafa;
+    border-radius:10px;
+    padding:10px;
+    border:1px solid #ddd;
 }
 
-/* SUBMENÚ */
-.submenu {
-    display: none;
-    position: absolute;
-    background: white;
-    list-style: none;
-    padding: 10px;
+/* =========================================
+   GRAFICAS
+========================================= */
+.grafica-container{
+    width:100%;
+    max-width:700px;
+    height:350px;
+    margin:20px auto;
 }
 
-.dropdown:hover .submenu {
-    display: block;
+#grafica,
+#graficaCA,
+#graficaCD{
+    width:100% !important;
+    height:100% !important;
 }
 
-/* TARJETAS */
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+/* =========================================
+   CANVAS
+========================================= */
+canvas{
+    max-width:1000px;
+    display:block;
+    margin:20px auto;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 200px;
-    transition: 0.3s;
+/* =========================================
+   OSCILOSCOPIO
+========================================= */
+#osciloscopioCA{
+    max-width:900px;
+    margin:20px auto;
+    display:block;
+    background:black;
+    border:4px solid #1f2937;
+    border-radius:12px;
 }
 
-/* ANIMACIÓN */
-.animado {
-    opacity: 0;
-    transform: translateY(30px);
+/* =========================================
+   CONTROLES
+========================================= */
+.controles{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:15px;
 }
 
-.animado.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/*practicas*/
-body {
-    font-family: Arial;
-    background: #f4f6f9;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+/* =========================================
+   VIDEO RESPONSIVO
+========================================= */
+.video-container{
+    width:100%;
+    max-width:350px;
+    aspect-ratio:9 / 16;
+    margin:30px auto;
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    border-radius:12px;
+    overflow:hidden;
+    background:#000;
 }
 
-.intro {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+.video-container iframe{
+    width:100%;
+    height:100%;
+    border:none;
 }
 
-input {
-    display: block;
-    margin: 5px 0;
-    padding: 8px;
-    width: 100%;
+/* =========================================
+   CARDS
+========================================= */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background: #2563eb;
-    color: white;
-    border: none;
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    flex:1;
+    min-width:220px;
+    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-.grafica-container {
-    max-width: 600px;
-    height: 300px;
-    margin: auto;
+.card:hover{
+    transform:translateY(-5px);
 }
 
-#grafica {
-    width: 100% !important;
-    height: 100% !important;
+/* =========================================
+   ANIMACIONES
+========================================= */
+.animado{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.6s ease;
+}
+
+.animado.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* =========================================
+   HR
+========================================= */
+hr{
+    margin:30px 0;
+    border:none;
+    border-top:2px solid #e5e7eb;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media(max-width:768px){
+
+    header h1{
+        font-size:1.6rem;
+    }
+
+    nav{
+        flex-direction:column;
+    }
+
+    .intro{
+        padding:20px;
+    }
+
+    .intro h2{
+        font-size:1.4rem;
+    }
+
+    .form-ohm{
+        flex-direction:column;
+    }
+
+    .grafica-container{
+        height:260px;
+    }
+
+    .cards{
+        flex-direction:column;
+    }
+}
+
+/* =========================================
+   TABLAS REDES DE DOS PUERTOS
+========================================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:25px 0;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:14px;
+    font-weight:600;
+}
+
+table td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:center;
+}
+
+table tr:hover{
+    background:#f8fafc;
+}
+
+/* =========================================
+   TEXTO DESTACADO
+========================================= */
+
+.highlight{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+/* =========================================
+   TITULOS DE SECCION
+========================================= */
+
+.section-title{
+    position:relative;
+}
+
+.section-title::after{
+
+    content:'';
+
+    width:60px;
+    height:4px;
+
+    background:#2563eb;
+
+    position:absolute;
+
+    bottom:-8px;
+    left:0;
+
+    border-radius:10px;
 }
