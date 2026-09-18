@@ -18,16 +18,24 @@ function calcularOhm() {
         return;
     }
 
+    if (!isFinite(V) || !isFinite(I) || !isFinite(R)) {
+        document.getElementById("resultadoOhm").innerHTML = "⚠️ No se puede dividir entre cero";
+        return;
+    }
+
     document.getElementById("resultadoOhm").innerHTML =
         `Voltaje: ${V.toFixed(2)} V<br>
          Corriente: ${I.toFixed(2)} A<br>
          Resistencia: ${R.toFixed(2)} Ω`;
 
-    // Datos gráfica
+    // Datos gráfica (número fijo de puntos: evita bucles infinitos si I = 0)
+    const PUNTOS = 20;
+    const iMax = Math.abs(I) * 2 || 1;
     let x = [], y = [];
 
-    for (let i = 0; i <= I * 2; i += I / 10) {
-        x.push(i);
+    for (let n = 0; n <= PUNTOS; n++) {
+        let i = (iMax / PUNTOS) * n;
+        x.push(i.toFixed(2));
         y.push(i * R);
     }
 
@@ -52,9 +60,7 @@ function calcularOhm() {
     });
 }
 
-// =========================
 // OSCILOSCOPIO
-// =========================
 
 const canvas = document.getElementById("osciloscopio");
 const ctx = canvas.getContext("2d");
@@ -136,15 +142,3 @@ function dibujarOsciloscopio() {
 }
 
 dibujarOsciloscopio();
-
-function calcularSerie(){
-let Rt=+r1s.value+ +r2s.value;
-let I=vs.value/Rt;
-resultadoSerie.innerText="Rt="+Rt+" I="+I;
-}
-
-function calcularParalelo(){
-let Rt=1/((1/r1p.value)+(1/r2p.value));
-let I=vp.value/Rt;
-resultadoParalelo.innerText="Rt="+Rt+" I="+I;
-}
