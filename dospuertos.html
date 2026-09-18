@@ -6,26 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Redes de Dos Puertos</title>
+    <title>Redes de Dos Puertos | Simulador de Circuitos</title>
+    <meta name="description" content="Teoría de redes de dos puertos: parámetros Z, Y e híbridos, con simulador interactivo del parámetro Z.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
     <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
+
 <body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header>
 
     <h1>Redes de Dos Puertos</h1>
 
     <nav>
+
         <a href="index.html">Inicio</a>
         <a href="cd.html">Corriente Directa</a>
         <a href="ca.html">Corriente Alterna</a>
+        <a href="dospuertos.html">Dos Puertos</a>
+        <a href="recursos.html">Recursos</a>
+
         <!-- MENU -->
         <div class="dropdown">
+
             <button class="dropbtn">
-                Prácticas ▾
+                Prácticas
             </button>
+
             <div class="dropdown-content">
 
                 <a href="practicas.html">
@@ -44,7 +56,7 @@
 
 </header>
 
-<main class="container">
+<main class="container" id="contenido">
 
 <section class="intro animado">
 
@@ -74,15 +86,22 @@
         Estas redes se utilizan para analizar el comportamiento
         de dispositivos como amplificadores, filtros y sistemas
         de comunicación, facilitando el diseño y la optimización
-        de estos sistemas.Se componen de dos pares de terminales
+        de estos sistemas.
+    </p>
+
+    <p>
+        Estas redes se componen de dos pares de terminales
         (puertos) que permiten conectar diferentes circuitos
         y analizar su comportamiento.
     </p>
 
     <p>
-        Son esenciales para el diseño y análisis
+        Estas redes son esenciales para el diseño y análisis
         de sistemas de comunicación, amplificadores,
         filtros y otros dispositivos electrónicos.
+    </p>
+
+    <p>
         Las redes de dos puertos son fundamentales en
         diversas áreas de la ingeniería eléctrica y
         electrónica, incluyendo:
@@ -123,6 +142,7 @@
     </p>
 
     <ul>
+
         <li>Condición de cortocircuito: Se establece 
             un cortocircuito en el puerto de salida 
             (V2 = 0) para medir la corriente de entrada (I1) 
@@ -181,7 +201,6 @@
     <p>
         En una red de dos puertos, se definen cuatro variables principales:
     </p>
-
 
     <table>
 
@@ -245,7 +264,7 @@
 
     <p>
         Los parámetros Z son conocidos como
-        parámetros de impedancia.
+        parámetros de impedancia. 
     </p>
 
     <p>
@@ -323,7 +342,7 @@
 
     <p>
         Los parámetros Y son conocidos como
-        parámetros de admitancia.
+        parámetros de admitancia. 
     </p>
 
     <p>
@@ -404,9 +423,11 @@
     </h2>
 
     <p>
-        Los parámetros híbridos son conocidos como parámetros hibridos.
+        Los parámetros híbridos son conocidos como
+        parámetros hibridos. 
     </p>
     
+
     <table>
 
         <tr>
@@ -558,18 +579,19 @@
     <div class="formula">
         XL = ωL
     </div>
-
+    
     <div class="formula">
         Y = G + jB
     </div>
     
-    <div class="formula">
+     <div class="formula">
         G = 1 / R
     </div>
     
-    <div class="formula">
+     <div class="formula">
         B = 1 / X
     </div>
+
 
     <ul>
 
@@ -596,16 +618,16 @@
         Simulador Básico de Parámetro Z
     </h2>
 
-    <label>Z11:</label>
+    <label for="z11">Z11:</label>
     <input type="number" id="z11">
 
-    <label>Z12:</label>
+    <label for="z12">Z12:</label>
     <input type="number" id="z12">
 
-    <label>I1:</label>
+    <label for="i1">I1:</label>
     <input type="number" id="i1">
 
-    <label>I2:</label>
+    <label for="i2">I2:</label>
     <input type="number" id="i2">
 
     <button onclick="calcularZ()">
@@ -628,9 +650,8 @@
 
 <footer>
 
-    <p>
-        
-    </p>
+    <p class="footer-marca">Simulador de Circuitos</p>
+    <p>Herramienta educativa de electrónica y circuitos eléctricos.</p>
 
 </footer>
 
@@ -638,6 +659,7 @@
 <!-- CONEXION JAVASCRIPT -->
 <!-- ========================================= -->
 
+<script src="js/nav.js"></script>
 <script src="js/dospuertos.js"></script>
 
 </body>
