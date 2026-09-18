@@ -3,31 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corriente Directa</title>
+<title>Corriente Directa | Simulador de Circuitos</title>
+<meta name="description" content="Teoría de la Corriente Directa (CD), calculadora de la Ley de Ohm y simulador tipo osciloscopio interactivo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header>
     <h1>Corriente Directa (CD)</h1>
 
     <nav>
         <a href="index.html">Inicio</a>
+        <a href="cd.html">Corriente Directa</a>
         <a href="ca.html">Corriente Alterna</a>
-        <a href="dospuertos.html">Redes de dos purtos</a>
+        <a href="dospuertos.html">Dos Puertos</a>
+        <a href="recursos.html">Recursos</a>
         <!-- MENÚ DESPLEGABLE -->
         <div class="dropdown">
-            <button class="dropbtn">Prácticas ▾</button>
+            <button class="dropbtn">Prácticas</button>
             <div class="dropdown-content">
                 <a href="practicas.html">Simulaciones</a>
                 <a href="bnc-caiman.html">Cable BNC-Caimán</a>
             </div>
         </div>
-
+    </nav>
 </header>
 
-<main class="container">
+<main class="container" id="contenido">
 
 <!-- TEORÍA -->
 <section class="intro">
@@ -52,17 +58,27 @@
         <li><strong>Resistencia (R):</strong> Oposición al paso de corriente</li>
     </ul>
 
-    <p style="text-align:center; font-size:20px;"><strong>V = I × R</strong></p>
+    <div class="formula">V = I × R</div>
 </section>
 
 <!-- CALCULADORA -->
 <section class="intro">
     <h2>Calculadora Ley de Ohm</h2>
+    <p>Ingresa dos valores cualesquiera y calcula el tercero.</p>
 
     <div class="form-ohm">
-        <input id="voltaje" placeholder="Voltaje (V)">
-        <input id="corriente" placeholder="Corriente (A)">
-        <input id="resistencia" placeholder="Resistencia (Ω)">
+        <div>
+            <label for="voltaje">Voltaje (V)</label>
+            <input id="voltaje" type="number" placeholder="Ej. 12">
+        </div>
+        <div>
+            <label for="corriente">Corriente (A)</label>
+            <input id="corriente" type="number" placeholder="Ej. 2">
+        </div>
+        <div>
+            <label for="resistencia">Resistencia (Ω)</label>
+            <input id="resistencia" type="number" placeholder="Ej. 6">
+        </div>
     </div>
 
     <button onclick="calcularOhm()">Calcular</button>
@@ -84,19 +100,19 @@
 
     <div class="controles">
 
-        <label>Modo:</label>
+        <label for="modo">Modo</label>
         <select id="modo">
             <option value="cd">CD</option>
             <option value="ca">CA</option>
         </select>
 
-        <label>Voltaje:</label>
+        <label for="voltajeSlider">Voltaje</label>
         <input type="range" id="voltajeSlider" min="1" max="20" value="5">
 
-        <label>Resistencia:</label>
+        <label for="resistenciaSlider">Resistencia</label>
         <input type="range" id="resistenciaSlider" min="1" max="100" value="10">
 
-        <label>Frecuencia:</label>
+        <label for="frecuenciaSlider">Frecuencia</label>
         <input type="range" id="frecuenciaSlider" min="1" max="60" value="10">
         <span id="freqValue">10 Hz</span>
 
@@ -107,8 +123,14 @@
 
 </main>
 
+<footer>
+    <p class="footer-marca">Simulador de Circuitos</p>
+    <p>Herramienta educativa de electrónica y circuitos eléctricos.</p>
+</footer>
+
 <!-- LIBRERÍA -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/nav.js"></script>
 <script src="js/script_cd.js"></script>
 
 </body>
