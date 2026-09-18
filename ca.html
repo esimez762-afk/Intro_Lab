@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<title>Corriente Alterna</title>
+<title>Corriente Alterna | Simulador de Circuitos</title>
+<meta name="description" content="Fundamentos de la Corriente Alterna (CA): frecuencia, impedancia, reactancia, desfase y potencia, con calculadora y osciloscopio interactivo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="ca-page">
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header>
     <h1>Corriente Alterna (CA)</h1>
@@ -16,35 +19,35 @@
     <nav>
         <a href="index.html">Inicio</a>
         <a href="cd.html">Corriente Directa</a>
-        <a href="dospuertos.html">Redes de dos purtos</a>
+        <a href="ca.html">Corriente Alterna</a>
+        <a href="dospuertos.html">Dos Puertos</a>
+        <a href="recursos.html">Recursos</a>
         <!-- MENÚ DESPLEGABLE -->
         <div class="dropdown">
-            <button class="dropbtn">Prácticas ▾</button>
+            <button class="dropbtn">Prácticas</button>
             <div class="dropdown-content">
                 <a href="practicas.html">Simulaciones</a>
                 <a href="bnc-caiman.html">Cable BNC-Caimán</a>
             </div>
         </div>
     </nav>
-    
+
 </header>
 
-<main class="container">
+<main class="container" id="contenido">
 
 <!-- TEORÍA -->
 <section class="intro">
     <h2>Fundamentos</h2>
     <p>
-        La corriente alterna (CA) es una señal eléctrica cuya magnitud y dirección varían 
-        periódicamente en el tiempo. A diferencia de la corriente directa, la CA presenta 
-        una forma de onda oscilatoria, típicamente senoidal, lo que permite su transmisión 
+        La corriente alterna (CA) es una señal eléctrica cuya magnitud y dirección varían
+        periódicamente en el tiempo. A diferencia de la corriente directa, la CA presenta
+        una forma de onda oscilatoria, típicamente senoidal, lo que permite su transmisión
         eficiente a largas distancias.
     </p>
 
     <h3>Ecuación de la señal</h3>
-    <p style="text-align:center; font-size:18px;">
-        V(t) = Vmax · sen(ωt)
-    </p>
+    <div class="formula">V(t) = Vmax · sen(ωt)</div>
     <p>
         Donde Vmax es la amplitud máxima, ω es la frecuencia angular y t es el tiempo.
     </p>
@@ -55,65 +58,59 @@
         En sistemas eléctricos comunes es de 50 o 60 Hz.
     </p>
 
-    <h3>Valores caracteristicos</h3>
+    <h3>Valores característicos</h3>
     <p>
         El valor eficaz es el equivalente en corriente directa:
-        Vrms = Vmax / √2  
     </p>
+    <div class="formula">Vrms = Vmax / √2</div>
     <p>
         El valor pico a pico es el doble de la amplitud máxima:
-        Vpp = 2 · Vmax
-    </p>  
+    </p>
+    <div class="formula">Vpp = 2 · Vmax</div>
 
     <h3>Impedancia</h3>
     <p>
         En CA la oposición al paso de corriente se denomina impedancia (Z), que
         incluye resistencia, inductancia y capacitancia.
     </p>
-    <p>
-        Z = √R² + (XL - XC)²
-    </p>
+    <div class="formula">Z = √(R² + (XL − XC)²)</div>
 
     <h3>Reactancia</h3>
     <p>
         La reactancia es la oposición al paso de corriente alterna y depende de la frecuencia.
     </p>
-    <p>
-        XL = 2πfL (inductiva)  
-        XC = 1 / (2πfC) (capacitiva)
-    </p>
+    <div class="formula">
+        XL = 2πfL (inductiva) &nbsp;·&nbsp; XC = 1 / (2πfC) (capacitiva)
+    </div>
 
     <h3>Desfase</h3>
     <p>
         En CA, la corriente y el voltaje pueden no estar en fase, lo que se representa por un ángulo φ.
     </p>
-    <p>
-        φ = arctan((XL - XC) / R)
-    </p>
+    <div class="formula">φ = arctan((XL − XC) / R)</div>
 
     <h3>Potencia en CA</h3>
     <p>
         Existen tres tipos de potencia: activa (P), reactiva (Q) y aparente (S):
     </p>
+    <div class="formula">
+        P = Vrms · Irms · cos(φ) &nbsp;·&nbsp; Q = Vrms · Irms · sin(φ) &nbsp;·&nbsp; S = Vrms · Irms
+    </div>
     <p>
-        P = Vrms · Irms · cos(φ)  
-        Q = Vrms · Irms · sin(φ)  
-        S = Vrms · Irms
+        Relación entre potencias:
     </p>
-    <p>
-         Relación entre potencias: S² = P² + Q²
-    </p>
+    <div class="formula">S² = P² + Q²</div>
 
     <h3>Factor de potencia</h3>
     <p>
         Indica la eficiencia del sistema y se define como cos(φ).
     </p>
     <p>
-        Un factor de potencia cercano a 1 indica un sistema eficiente, mientras que valores bajos 
+        Un factor de potencia cercano a 1 indica un sistema eficiente, mientras que valores bajos
         pueden causar pérdidas y sobrecargas en la red eléctrica.
     </p>
     <p>
-        En resumen, la corriente alterna es fundamental para la distribución de energía eléctrica 
+        En resumen, la corriente alterna es fundamental para la distribución de energía eléctrica
         y su análisis requiere comprender conceptos como frecuencia, impedancia, potencia y factor de potencia.
     </p>
 </section>
@@ -121,11 +118,21 @@
 <!-- CALCULADORA -->
 <section class="intro">
     <h2>Calculadora</h2>
+    <p>Ingresa dos valores cualesquiera y calcula el tercero.</p>
 
     <div class="form-ohm">
-        <input id="voltajeCA" placeholder="Voltaje">
-        <input id="corrienteCA" placeholder="Corriente">
-        <input id="impedancia" placeholder="Impedancia">
+        <div>
+            <label for="voltajeCA">Voltaje (V)</label>
+            <input id="voltajeCA" type="number" placeholder="Ej. 120">
+        </div>
+        <div>
+            <label for="corrienteCA">Corriente (A)</label>
+            <input id="corrienteCA" type="number" placeholder="Ej. 5">
+        </div>
+        <div>
+            <label for="impedancia">Impedancia (Ω)</label>
+            <input id="impedancia" type="number" placeholder="Ej. 24">
+        </div>
     </div>
 
     <button onclick="calcularCA()">Calcular</button>
@@ -149,10 +156,11 @@
     <h2>Osciloscopio CA</h2>
 
     <div class="controles">
-        <label>Voltaje:</label>
+        <label for="voltajeSliderCA">Voltaje</label>
         <input type="range" id="voltajeSliderCA" min="1" max="20" value="5">
+        <span id="voltValueCA">5 V</span>
 
-        <label>Frecuencia (Hz):</label>
+        <label for="frecuenciaSliderCA">Frecuencia (Hz)</label>
         <input type="range" id="frecuenciaSliderCA" min="1" max="60" value="10">
         <span id="freqValueCA">10 Hz</span>
     </div>
@@ -162,7 +170,13 @@
 
 </main>
 
+<footer>
+    <p class="footer-marca">Simulador de Circuitos</p>
+    <p>Herramienta educativa de electrónica y circuitos eléctricos.</p>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/nav.js"></script>
 <script src="js/script_ca.js"></script>
 
 </body>
