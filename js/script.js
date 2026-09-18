@@ -62,6 +62,7 @@ function mostrarElementos() {
 }
 
 window.addEventListener("scroll", mostrarElementos);
+mostrarElementos(); // por si ya están visibles al cargar la página
 
 // ===========================
 // EFECTO HOVER TARJETAS
