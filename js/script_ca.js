@@ -71,10 +71,23 @@ function actualizarGraficaCA() {
 // CONTROL DE FRECUENCIA
 // =======================
 document.getElementById("frecuenciaSliderCA").addEventListener("input", function() {
-    f_global = this.value;
+    f_global = parseFloat(this.value);
     document.getElementById("freqValueCA").innerText = f_global + " Hz";
     actualizarGraficaCA();
 });
+
+// =======================
+// CONTROL DE VOLTAJE (osciloscopio)
+// =======================
+const voltajeSliderCA = document.getElementById("voltajeSliderCA");
+const voltValueCA = document.getElementById("voltValueCA");
+
+if (voltajeSliderCA) {
+    voltajeSliderCA.addEventListener("input", function() {
+        V_global = parseFloat(this.value);
+        if (voltValueCA) voltValueCA.innerText = V_global + " V";
+    });
+}
 
 // =======================
 // OSCILOSCOPIO
@@ -89,7 +102,7 @@ let t = 0;
 
 function dibujarOsciloscopioCA() {
 
-    let V = V_global || 5;
+    let V = V_global ?? 5;
     let f = f_global;
 
     ctx.fillStyle = "#000";
