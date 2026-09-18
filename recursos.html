@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Descargas | Simulador de Circuitos</title>
+    <meta name="description" content="Descarga guías, hojas de ejercicios y material de apoyo del simulador de circuitos.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header>
+    <h1>Recursos y Descargas</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cd.html">Corriente Directa</a>
+        <a href="ca.html">Corriente Alterna</a>
+        <a href="dospuertos.html">Dos Puertos</a>
+        <a href="recursos.html">Recursos</a>
+        <!-- MENÚ DESPLEGABLE -->
+        <div class="dropdown">
+            <button class="dropbtn">Prácticas</button>
+            <div class="dropdown-content">
+                <a href="practicas.html">Simulaciones</a>
+                <a href="bnc-caiman.html">Cable BNC-Caimán</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container" id="contenido">
+
+    <section class="intro">
+        <h2>Archivos adjuntos</h2>
+        <p>
+            Aquí encontrarás guías, hojas de ejercicios y material de apoyo en formato
+            descargable relacionado con los temas del simulador.
+        </p>
+
+        <label for="buscarArchivo">Buscar archivo</label>
+        <input type="text" id="buscarArchivo" placeholder="Escribe un nombre o categoría..." class="archivos-buscador">
+
+        <div id="listaArchivos" class="archivos-lista" aria-live="polite"></div>
+    </section>
+
+    <section class="intro">
+        <h2>¿Cómo subo un archivo?</h2>
+        <p>
+            Este sitio es estático (sin servidor ni base de datos), así que "subir" un archivo
+            significa agregarlo a la carpeta del proyecto y registrarlo en una lista. Sigue estos pasos:
+        </p>
+
+        <ol style="padding-left:20px; margin-bottom:15px;">
+            <li style="margin-bottom:10px;">
+                Copia tu archivo (PDF, Word, Excel, imagen, etc.) dentro de la carpeta
+                <strong>/archivos</strong> del proyecto.
+            </li>
+            <li style="margin-bottom:10px;">
+                Abre el archivo <strong>js/recursos.js</strong> y agrega un nuevo objeto a la
+                lista <strong>ARCHIVOS</strong>, indicando el nombre, una descripción corta y la
+                ruta del archivo.
+            </li>
+            <li style="margin-bottom:10px;">
+                Guarda los cambios y vuelve a subir (o hacer <em>commit/push</em>) la carpeta completa
+                a donde tengas alojado tu sitio (GitHub Pages, hosting, etc.). El archivo aparecerá
+                automáticamente en la lista de arriba.
+            </li>
+        </ol>
+
+        <p>Ejemplo de entrada en <strong>js/recursos.js</strong>:</p>
+
+        <div class="formula" style="text-align:left; white-space:pre;">{
+    nombre: "Guía de práctica - Ley de Ohm",
+    descripcion: "Hoja de ejercicios con soluciones.",
+    archivo: "archivos/guia-ley-ohm.pdf",
+    categoria: "Corriente Directa"
+}</div>
+
+        <p>
+            No es necesario tocar ningún otro archivo: la página lee esa lista y genera
+            automáticamente la tarjeta con el ícono, la descripción y el botón de descarga.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p class="footer-marca">Simulador de Circuitos</p>
+    <p>Herramienta educativa de electrónica y circuitos eléctricos.</p>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/recursos.js"></script>
+<script src="js/recursos-render.js"></script>
+
+</body>
+</html>
